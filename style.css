@@ -1,0 +1,89 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #121220;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* 隱藏式選單容器 */
+#side-menu {
+  position: fixed; /* 固定在畫面上 */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px; /* 選單寬度 */
+  background-color: #1a1a2e; /* 選單背景色 */
+  padding-top: 60px; /* 頂部留白 */
+  z-index: 1000; /* 確保在最上層 */
+  transform: translateX(-100%); /* 預設隱藏在左側 */
+  transition: transform 0.5s ease-in-out; /* 滑動動畫效果 */
+  box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 選單可見時的樣式 */
+/* 選單可見時的樣式 */
+#side-menu.menu-visible {
+  transform: translateX(0);
+}
+
+/* 選單內的連結樣式 */
+#side-menu a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 32px; /* 選單文字大小 */
+  color: #81cfe5; /* 選單文字顏色 */
+  display: block; /* 讓連結變成區塊元素，各佔一行 */
+  transition: 0.3s;
+}
+
+/* 滑鼠移到連結上的樣式 */
+#side-menu a:hover {
+  color: #f71735;
+}
+
+/* Iframe 容器樣式 */
+#iframe-container {
+  display: none; /* 預設隱藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  z-index: 2000; /* 確保在最上層 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Iframe 本體樣式 */
+#content-iframe {
+  width: 70vw; /* 70% 視窗寬度 */
+  height: 85vh; /* 85% 視窗高度 */
+  border: 2px solid #81cfe5;
+  background: #fff;
+}
+
+/* 關閉按鈕樣式 */
+#close-iframe-btn {
+  position: absolute;
+  top: 6%;
+  right: 14%;
+  padding: 10px 20px;
+  background-color: #f71735;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
